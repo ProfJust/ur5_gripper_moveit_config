@@ -2,9 +2,9 @@
 <launch>
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
-  <arg name="urdf_path" default="$(find ur_description)/urdf/ur5_robotiq85_gripper.urdf.xacro"/>
   <arg name="gazebo_world_name" default="worlds/empty.world"/>
-  
+  <arg name="urdf_path"/>
+  <param name="urdf_path" value="$(arg urdf_path)"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -17,6 +17,10 @@
 
   <!-- send robot urdf to param server -->
   <param name="robot_description" textfile="$(arg urdf_path)" />
+
+  <!-- <node name="pub_msg" pkg="emr22" type="pub_msg" 
+    args="pub /msg std_msgs/String '$(arg urdf_path)'"
+   output="screen" /> -->
 
   <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
   <!-- OJ Empty World Position        args="-urdf -param robot_description -model robot -x 0 -y 0 -z 0.1"  -->
