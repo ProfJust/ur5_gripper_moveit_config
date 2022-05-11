@@ -7,6 +7,8 @@ $ roslaunch ur5_gripper_moveit_config demo_gazebo_pick_and_place.launch
 Für Real Robot, ist dies die oberste Launch Datei
 usage
 $ roslaunch ur5_gripper_moveit_config ur5e_real_robot_emr22_moveit_bringup.launchh sim:=false limited:=true
+
+see https://www.youtube.com/watch?v=edHAzfYre7E 17min46
 -->
 
 <launch>
