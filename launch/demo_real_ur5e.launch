@@ -25,14 +25,14 @@
   <arg name="urdf_path" default="$(find ur_description)/urdf/ur5_robotiq85_gripper.urdf.xacro"/>
   <!-- Achtung könnte schon von aufrufender Stelle überschrieben sein -->
  
-  <!-- launch the gazebo simulator and spawn the robot -->
+  <!-- launch the gazebo simulator and spawn the robot 
   <include file="$(find ur5_gripper_moveit_config)/launch/gazebo.launch" >
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
     <arg name="urdf_path" value="$(arg urdf_path)"/>
     <arg name="gazebo_world_name" default="worlds/empty.world"/>
   </include>
-
+-->
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find ur5_gripper_moveit_config)/launch/planning_context.launch">
